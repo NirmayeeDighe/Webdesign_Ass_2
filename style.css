@@ -9,12 +9,19 @@
   color: #000;
   background: #fff;
 }
+
+body {
+  background: url('img.png');
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 nav{
-  position: fixed;
   background: #1b1b1b;
   width: 100%;
   padding: 10px 0;
-  z-index: 12;
 }
 nav .menu{
   max-width: 1250px;
@@ -53,14 +60,15 @@ nav .menu{
   background: #fff;
   color: black;
 }
-.img{
-  background: url('img.png')no-repeat;
+
+section {
   width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  padding: 20px;
 }
+section iframe {
+  width : 60%;
+}
+
 .img::before{
   content: '';
   position: absolute;
@@ -69,13 +77,9 @@ nav .menu{
   background: rgba(0, 0, 0, 0.4);
 }
 .center{
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  padding: 0 20px;
   text-align: center;
+  padding-top: 130px;
+  height: 100%;
 }
 .center .title{
   color: #fff;
@@ -103,6 +107,7 @@ nav .menu{
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
+  background-color: white !important;
 }
 .center .btns button:first-child{
   color: white;
@@ -134,14 +139,13 @@ nav .menu{
 
 }
 
+.certificates{
+  display: flex;
+}
+
 .gallery {
-float: left;
-width: 350px;
-padding: 20px;
-margin: 20px;
 
-
-
+margin: 0 auto;
 }
 
 .gallery:hover {
@@ -164,33 +168,76 @@ text-align: center;
 .new{
   color:white;
 }
-.main {
- column-gap: 40px;
-  column-count: 2;
+
+.main{
+  display: flex;
+  align-items: center;
 }
   
-}
+
 .info{
-  width = 50%
+  width : 90%;
+  font-size: 1.6rem;
 }
 
 .photo{
-  width = 50%
- width =300px 
+  width : 100%;
+}
+
+.photo img { 
+  width: 40%;
 }
 
 @media only screen and (max-width: 992px) {
   .center {
     padding-top: 0px;
-    text-align: center;
+    /* text-align: center;
     position: relative;
-    height: 100%;
+    height: 100%; */
+  }
+
+  nav .menu {
+    justify-content: end;
+  }
+
+  .main{
+    display : block;
+  }
+
+  .info, .photo {
+    padding: 10px;
+  }
+
+  .first-list{
+    display: none !important;
+  }
+
+
+  .center .btns button {
+    display: block;
+    margin: 30px auto;
+  }
+
+  .info, .photo {
+    width: 100%;
+    padding : 10px 0px;
+  }
+
+  .certificates {
+    display: block;
+  }
+
+  .gallery {
+    padding: 10px;
   }
 
   
 }
 
 @media only screen and (max-width: 768px) {
+  .center {
+    padding-top: 50px;
+  }
   .menu{
     display: block;
     width: 100%; 
@@ -205,3 +252,16 @@ text-align: center;
   .menu ul li {
     padding: 10px;
   }
+  .menu .first-list{
+    display: none !important;
+  }
+
+  section {
+    width: 100%;
+    padding: 20px;
+  }
+  section iframe {
+    width : 100%;
+  }
+
+}  
